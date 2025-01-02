@@ -1,6 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+* {
+    font-family: "Public Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 body {
+}
+
+.brand_300 {
+    background-color: #60f4ff;
+}
+
+.brand_500 {
+    background-color: #00c6de;
+}
+
+.brand_700 {
+    background-color: #087d96;
 }
