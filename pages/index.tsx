@@ -13,6 +13,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import textContents from "@/components/textContents";
 import Hero from "@/components/hero";
+import ProcessSection from "@/components/process";
 
 export default function Home() {
   const { color, index } = useAnimationColors(textContents);
@@ -25,6 +26,7 @@ export default function Home() {
       <ProductivitySection />
       <AutomationInterestSection />
       <ProjectSlider />
+      <ProcessSection />
       <BusinessAnalyticsSection />
       <AutomationSection />
       <TestimonialSlider />
