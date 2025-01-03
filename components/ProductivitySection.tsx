@@ -1,6 +1,9 @@
 const ProductivitySection = () => {
   return (
-    <div className="flex flex-col items-start h-auto md:min-h-[calc(100dvh-60px)] bg-black text-white px-6 lg:px-24 py-8 md:py-28">
+    <div
+      id="digitalizace"
+      className="flex flex-col items-start h-auto md:min-h-[calc(100dvh-60px)] bg-black text-white px-6 lg:px-24 py-8 md:py-28"
+    >
       {/* Header */}
       <h5 className="text-sm font-semibold text-[#00C6DE] uppercase mb-2">
         Rychlá digitalizace a automatizace
