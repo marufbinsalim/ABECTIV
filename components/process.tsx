@@ -86,7 +86,7 @@ const ProcessSection = () => {
   const [current, setCurrent] = useState(1);
 
   return (
-    <section className="bg-black text-white py-28 px-6 md:px-24" id="onas">
+    <section className="bg-black text-white py-28 px-6 md:px-24">
       <h1 className="text-3xl md:text-6xl font-bold leading-snug mb-12">
         Jak to funguje
       </h1>
