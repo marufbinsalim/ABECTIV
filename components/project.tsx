@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import useBreakpoint from "@/hooks/useBreakpoint";
 
 const projects = [
   {
@@ -44,10 +45,16 @@ const groupProjects = (projects: any[], groupSize: number) => {
   return grouped;
 };
 
-const groupedProjects = groupProjects(projects, 3);
-
 const ProjectSlider = () => {
   const [current, setCurrent] = useState(0);
+
+  const { breakpoint } = useBreakpoint();
+
+  useEffect(() => {
+    setCurrent(0);
+  }, [breakpoint]);
+
+  const groupedProjects = groupProjects(projects, breakpoint === "sm" ? 1 : 3);
 
   const nextSlide = () => {
     setCurrent((prev) => (prev + 1) % groupedProjects.length);
@@ -60,7 +67,7 @@ const ProjectSlider = () => {
   };
 
   return (
-    <div className="bg-black text-white py-16 px-24">
+    <div className="bg-black text-white py-16 px-6 md:px-24">
       <div className="mx-auto">
         {/* Section Header */}
         <div className="text-left mb-12">
@@ -91,7 +98,7 @@ const ProjectSlider = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {groupedProjects[current].map((project: any) => (
+                  {groupedProjects[current]?.map((project: any) => (
                     <div key={project.id} className="p-6 relative">
                       <img
                         src={project.image}

@@ -1,5 +1,6 @@
+import useBreakpoint from "@/hooks/useBreakpoint";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const testimonials = [
   {
@@ -40,10 +41,19 @@ const groupTestimonials = (testimonials: any[], groupSize: number) => {
   return grouped;
 };
 
-const groupedTestimonials = groupTestimonials(testimonials, 2);
-
 const TestimonialSlider = () => {
   const [current, setCurrent] = useState(0);
+
+  const { breakpoint } = useBreakpoint();
+
+  useEffect(() => {
+    setCurrent(0);
+  }, [breakpoint]);
+
+  const groupedTestimonials = groupTestimonials(
+    testimonials,
+    breakpoint === "sm" ? 1 : 2,
+  );
 
   const nextSlide = () => {
     setCurrent((prev) => (prev + 1) % groupedTestimonials.length);
@@ -57,7 +67,7 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <div className="bg-black text-white py-16 px-24">
+    <div className="bg-black text-white py-16 px-6 md:px-24">
       <div className="mx-auto">
         {/* Section Header */}
         <div className="text-left mb-12">
@@ -78,7 +88,7 @@ const TestimonialSlider = () => {
           </button>
 
           {/* Testimonials */}
-          <div className="flex-1 px-8">
+          <div className="flex-1 px-12">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
@@ -87,8 +97,8 @@ const TestimonialSlider = () => {
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-[90%] m-auto min-h-[50vh] items-center">
-                  {groupedTestimonials[current].map((testimonial: any) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-[80%] md:w-[90%] m-auto min-h-[50vh] items-center">
+                  {groupedTestimonials[current]?.map((testimonial: any) => (
                     <div
                       key={testimonial.id}
                       className="flex flex-col justify-start"
@@ -98,7 +108,7 @@ const TestimonialSlider = () => {
                         alt="Company Logo"
                         className="mb-8 h-[30px] object-contain mr-auto"
                       />
-                      <p className="text-lg italic max-w-3xl w-[80%]">
+                      <p className="text-lg italic max-w-3xl md:w-[80%]">
                         {testimonial.feedback}
                       </p>
                       <div className="mt-8">

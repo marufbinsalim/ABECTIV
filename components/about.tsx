@@ -1,6 +1,6 @@
 const AboutSection = () => {
   return (
-    <section className="bg-black text-white py-16 px-24" id="onas">
+    <section className="bg-black text-white py-16 px-6 md:px-24" id="onas">
       <div className="mx-auto">
         {/* Title */}
         <h2 className="text-[#00C6DE] text-lg uppercase font-bold mb-4">
@@ -10,7 +10,7 @@ const AboutSection = () => {
         {/* About Text */}
         <div className="mb-12">
           <h3 className="text-3xl font-bold mb-4">Abectiv</h3>
-          <p className="text-lg w-[80%]">
+          <p className="text-lg md:w-[80%]">
             Jsme profesionální společnost zaměřená na poskytování cenově
             dostupných a efektivních řešení v oblasti digitalizace procesů a
             business analytiky. S našimi službami můžete rychle a efektivně

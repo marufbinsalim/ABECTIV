@@ -1,10 +1,10 @@
 const AutomationSection = () => {
   return (
-    <section className="bg-gradient-to-b from-[#053747] to-black text-white py-16 px-24">
-      <div className="mx-auto bg-[#0097B2] p-12 rounded-lg">
+    <section className="bg-gradient-to-b from-[#053747] to-black text-white py-16 px-6 lg:px-24">
+      <div className="mx-auto bg-[#0097B2] p-6 lg:p-12 rounded-lg">
         {/* Text Section */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-4">
+          <h1 className="text-2xl md:text-4xl font-bold mb-4">
             Získejte{" "}
             <span className="text-teal-100">efektivní automatizaci</span> <br />{" "}
             vašich procesů
@@ -16,7 +16,7 @@ const AutomationSection = () => {
         </div>
 
         {/* Buttons Section */}
-        <div className="flex gap-6">
+        <div className="flex gap-6 md:flex-row flex-col">
           <button className="bg-[#A1FAFF] text-[#002330] px-6 py-3 font-semibold rounded-full shadow-md hover:bg-teal-200 transition">
             Konzultace zdarma
           </button>
