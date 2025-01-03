@@ -1,3 +1,5 @@
+import { LucideMail, LucideMap, LucidePhone, LucidePin } from "lucide-react";
+
 const AboutSection = () => {
   return (
     <section className="bg-black text-white py-16 px-6 md:px-24" id="onas">
@@ -23,7 +25,9 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Email */}
           <div className="flex items-start">
-            <span className="text-2xl mr-4">📧</span>
+            <span className="text-2xl mr-4">
+              <LucideMail size={24} />
+            </span>
             <div>
               <h4 className="font-bold text-lg mb-4">Email</h4>
               <a href="mailto:obchod@abectiv.com" className="underline">
@@ -34,7 +38,9 @@ const AboutSection = () => {
 
           {/* Phone */}
           <div className="flex items-start">
-            <span className="text-2xl mr-4">📞</span>
+            <span className="text-2xl mr-4">
+              <LucidePhone size={24} />
+            </span>
             <div>
               <h4 className="font-bold text-lg mb-4">Telefon</h4>
               <a href="tel:+420601096995" className="underline">
@@ -45,7 +51,9 @@ const AboutSection = () => {
 
           {/* Office Address */}
           <div className="flex items-start">
-            <span className="text-2xl mr-4">📍</span>
+            <span className="text-2xl mr-4">
+              <LucidePin size={24} />
+            </span>
             <div>
               <h4 className="font-bold text-lg mb-4">Kancelář</h4>
               <address className="not-italic">

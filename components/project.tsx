@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import useBreakpoint from "@/hooks/useBreakpoint";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const projects = [
   {
@@ -81,10 +82,10 @@ const ProjectSlider = () => {
         <div className="relative flex items-center">
           {/* Previous Arrow */}
           <button
-            className="absolute left-0 h-[40px] w-[40px] md:h-[56px] md:w-[56px] rounded-full text-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
+            className="absolute flex items-center justify-center left-0 h-[40px] w-[40px] md:h-[56px] md:w-[56px] rounded-full text-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
             onClick={prevSlide}
           >
-            ←
+            <ArrowLeft />
           </button>
 
           {/* Projects */}
@@ -129,10 +130,10 @@ const ProjectSlider = () => {
 
           {/* Next Arrow */}
           <button
-            className="absolute right-0 h-[40px] w-[40px] md:h-[56px] md:w-[56px] rounded-full text-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
+            className="absolute flex items-center justify-center right-0 h-[40px] w-[40px] md:h-[56px] md:w-[56px] rounded-full text-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
             onClick={nextSlide}
           >
-            →
+            <ArrowRight />
           </button>
         </div>
 

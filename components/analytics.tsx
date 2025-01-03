@@ -1,6 +1,9 @@
 const BusinessAnalyticsSection = () => {
   return (
-    <section className="bg-gradient-to-b from-[#141414] to-[#053747] text-white px-6 py-6 md:pt-48 md:pb-28 md:px-24 h-auto md:min-h-[100dvh]">
+    <section
+      id="analytika"
+      className="bg-gradient-to-b from-[#141414] to-[#053747] text-white px-6 py-6 md:pt-48 md:pb-28 md:px-24 h-auto md:min-h-[100dvh]"
+    >
       <div className="mx-auto">
         {/* Heading Section */}
         <div className="mb-[100px]">

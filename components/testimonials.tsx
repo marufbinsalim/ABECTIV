@@ -1,5 +1,6 @@
 import useBreakpoint from "@/hooks/useBreakpoint";
 import { AnimatePresence, motion } from "framer-motion";
+import { ArrowLeft, ArrowRight, LucideArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const testimonials = [
@@ -67,7 +68,7 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <div className="bg-black text-white py-16 px-6 md:px-24">
+    <div id="reference" className="bg-black text-white py-16 px-6 md:px-24">
       <div className="mx-auto">
         {/* Section Header */}
         <div className="text-left mb-12">
@@ -81,10 +82,10 @@ const TestimonialSlider = () => {
         <div className="relative flex items-center justify-between">
           {/* Previous Arrow */}
           <button
-            className="absolute left-0 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition h-[40px] w-[40px] md:h-[56px] md:w-[56px]"
+            className="absolute left-0 rounded-full flex items-center justify-center border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition h-[40px] w-[40px] md:h-[56px] md:w-[56px]"
             onClick={prevSlide}
           >
-            ←
+            <ArrowLeft />
           </button>
 
           {/* Testimonials */}
@@ -124,10 +125,10 @@ const TestimonialSlider = () => {
 
           {/* Next Arrow */}
           <button
-            className="absolute right-0 h-[40px] w-[40px] md:h-[56px] md:w-[56px] rounded-full text-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
+            className="absolute  flex items-center justify-center right-0 h-[40px] w-[40px] md:h-[56px] md:w-[56px] rounded-full text-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
             onClick={nextSlide}
           >
-            →
+            <ArrowRight />
           </button>
         </div>
 
