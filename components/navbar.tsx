@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { MenuIcon, XIcon } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -21,11 +22,11 @@ function Navbar({ color }: { color: string }) {
 
       {/* Hamburger Icon for Mobile */}
       <div className="md:hidden" onClick={toggleMobileMenu}>
-        <div className="space-y-2 cursor-pointer">
-          <div className="w-8 h-0.5 bg-white"></div>
-          <div className="w-8 h-0.5 bg-white"></div>
-          <div className="w-8 h-0.5 bg-white"></div>
-        </div>
+        {isMobileMenuOpen ? (
+          <XIcon className="h-8 w-8" />
+        ) : (
+          <MenuIcon className="h-8 w-8" />
+        )}
       </div>
 
       {/* Desktop Menu */}
