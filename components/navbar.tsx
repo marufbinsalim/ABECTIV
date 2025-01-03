@@ -16,9 +16,9 @@ function Navbar({ color }: { color: string }) {
         duration-1000 ease-in-out
         ${color}`}
     >
-      <Link href="/#hero">
+      <div onClick={() => window.location.replace("/")}>
         <img src="/logo.webp" alt="Logo" className="h-8" />
-      </Link>
+      </div>
 
       {/* Hamburger Icon for Mobile */}
       <div className="md:hidden" onClick={toggleMobileMenu}>
