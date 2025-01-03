@@ -81,7 +81,7 @@ const TestimonialSlider = () => {
         <div className="relative flex items-center justify-between">
           {/* Previous Arrow */}
           <button
-            className="absolute left-0 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition h-[56px] w-[56px]"
+            className="absolute left-0 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition h-[40px] w-[40px] md:h-[56px] md:w-[56px]"
             onClick={prevSlide}
           >
             ←
@@ -97,7 +97,7 @@ const TestimonialSlider = () => {
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-[80%] md:w-[90%] m-auto min-h-[50vh] items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-[90%] m-auto min-h-[50vh] items-center">
                   {groupedTestimonials[current]?.map((testimonial: any) => (
                     <div
                       key={testimonial.id}
@@ -124,7 +124,7 @@ const TestimonialSlider = () => {
 
           {/* Next Arrow */}
           <button
-            className="absolute right-0 h-[56px] w-[56px] rounded-full text-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
+            className="absolute right-0 h-[40px] w-[40px] md:h-[56px] md:w-[56px] rounded-full text-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
             onClick={nextSlide}
           >
             →

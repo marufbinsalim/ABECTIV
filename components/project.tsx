@@ -81,14 +81,14 @@ const ProjectSlider = () => {
         <div className="relative flex items-center">
           {/* Previous Arrow */}
           <button
-            className="absolute left-0 h-[56px] w-[56px] rounded-full text-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
+            className="absolute left-0 h-[40px] w-[40px] md:h-[56px] md:w-[56px] rounded-full text-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
             onClick={prevSlide}
           >
             ←
           </button>
 
           {/* Projects */}
-          <div className="flex-1 px-12">
+          <div className="flex-1 px-8 md:px-12">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
@@ -105,7 +105,7 @@ const ProjectSlider = () => {
                         alt={project.title}
                         className="rounded-lg mb-4 h-[230px] w-[100%]"
                       />
-                      <div className="absolute top-0 right-0 p-8 w-[70%] flex flex-wrap justify-end space-y-2">
+                      <div className="absolute top-0 right-0 p-8 w-[90%] md:w-[70%] flex flex-wrap justify-end space-y-2">
                         {project.tags.map((tag: string, index: number) => (
                           <span
                             key={index}
@@ -129,7 +129,7 @@ const ProjectSlider = () => {
 
           {/* Next Arrow */}
           <button
-            className="absolute right-0 h-[56px] w-[56px] rounded-full text-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
+            className="absolute right-0 h-[40px] w-[40px] md:h-[56px] md:w-[56px] rounded-full text-xl border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
             onClick={nextSlide}
           >
             →

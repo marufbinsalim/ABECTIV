@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const FooterSection = () => {
   return (
     <footer className="bg-black text-white py-8 px-6 md:px-24">
@@ -5,7 +7,9 @@ const FooterSection = () => {
         {/* Logo and Slogan */}
         <div className="flex justify-evenly items-center w-full md:w-max gap-2">
           {/* Logo */}
-          <img src="/logo.webp" alt="Abectiv Logo" className="block h-8" />
+          <Link href="/#hero">
+            <img src="/logo.webp" alt="Abectiv Logo" className="block h-8" />
+          </Link>
           {/* seperator */}
           <div className="h-8 w-0.5 bg-white"></div>
 

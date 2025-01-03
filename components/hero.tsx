@@ -4,6 +4,7 @@ import textContents from "@/components/textContents";
 function Hero({ index, color }: { index: number; color: string }) {
   return (
     <div
+      id="hero"
       className={`flex relative flex-col justify-center min-h-[94dvh] overflow-x-hidden transition-all ${color}`}
     >
       <AnimatePresence mode="wait">

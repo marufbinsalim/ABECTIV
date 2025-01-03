@@ -15,7 +15,9 @@ function Navbar({ color }: { color: string }) {
         duration-1000 ease-in-out
         ${color}`}
     >
-      <img src="/logo.webp" alt="Logo" className="h-8" />
+      <Link href="/#hero">
+        <img src="/logo.webp" alt="Logo" className="h-8" />
+      </Link>
 
       {/* Hamburger Icon for Mobile */}
       <div className="md:hidden" onClick={toggleMobileMenu}>
