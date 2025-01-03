@@ -1,6 +1,87 @@
 import { LucideMail, LucideMap, LucidePhone, LucidePin } from "lucide-react";
 import { useState } from "react";
 
+const MobileProcessComponent = () => {
+  const steps = [
+    {
+      id: 1,
+      title: "Mapování procesů",
+      description: [
+        `
+        Společně s vámi prozkoumáme, jak vaše firma aktuálně funguje.
+        Mluvíme s klíčovými lidmi, analyzujeme kroky a vytváříme jasný
+        vizuální přehled procesů. Takto rychle identifikujeme slabá místa,
+        zpoždění a příležitosti pro zlepšení.
+      `,
+      ],
+      color: "#000000",
+    },
+    {
+      id: 2,
+      title: "Návrh řešení",
+      description: [
+        `
+        Na základě získaných poznatků vám navrhneme efektivné řešení, jak
+        procesy digitalizovat a převést data na plně automatizovanou formu.
+        Díky tomuhle přístupu rychle uvidíte, jak vám moderní nástroje
+        usnadní práci.
+      `,
+      ],
+      color: "#053747",
+    },
+    {
+      id: 3,
+      title: "Implementace",
+      description: [
+        `
+        Ukážeme vám vybrané nástroje v praxi – co dokážou a jak vám ušetří
+        čas i peníze. Naučíme vás s nimi pracovat, abyste ihned viděli jasné
+        výhody oproti stávajícím postupům.`,
+        `Vědeli jste, že...? Můžete například propojit svůj CRM systém s
+        e-mailovým klientem nebo účetním softwarem, napojit automatizace na
+        současné ERP řešení jako je SAP, POHODA, MONEY S3 apd.
+      `,
+      ],
+      color: "#10647A",
+    },
+    {
+      id: 4,
+      title: "Automatizace a nasazení",
+      description: [
+        `
+        Zvolíme vhodné NoCode/LowCode nástroje, které perfektně zapadnou do vašeho systému.
+        Nastavíme automatizované pracovní postupy, které plynule propojí všechny vaše aplikace.`,
+        `Po otestování vše nasadíme a vy můžete okamžitě začít sklízet výsledky.
+      `,
+      ],
+      color: "#0097B2",
+    },
+  ];
+
+  const [currentStep, setCurrentStep] = useState(1);
+
+  return (
+    <div className="lg:hidden flex flex-col space-y-8">
+      {steps.map((step) => (
+        <div
+          key={step.id}
+          className={`border border-[#dbdbdb60] rounded-lg p-6 bg-[${step.color}] text-white transition-all duration-700`}
+          onClick={() => setCurrentStep(step.id)}
+        >
+          <p className="text-2xl font-bold mb-4">{`0${step.id}`} </p>
+          <h2 className="text-2xl font-bold mb-4">{step.title}</h2>
+          <div
+            className={`transition-all duration-700 ${currentStep === step.id ? "opacity-100 h-auto" : "opacity-0 h-0"}`}
+          >
+            {currentStep === step.id &&
+              step?.description.map((desc) => <p className="mt-8">{desc} </p>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
 const ProcessSection = () => {
   const [current, setCurrent] = useState(1);
 
@@ -11,9 +92,8 @@ const ProcessSection = () => {
       </h1>
 
       {/* Mobile */}
-      <div className="w-full border border-white h-[500px] flex lg:hidden">
-        <p> Under Construction for Mobile </p>
-      </div>
+
+      <MobileProcessComponent />
 
       {/* Desktop */}
 
