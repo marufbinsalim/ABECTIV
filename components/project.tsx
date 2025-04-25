@@ -123,20 +123,22 @@ const ProjectSlider = () => {
                         ))}
                       </div>
 
-                      <div className="space-y-4 mt-auto">
-                        <h3 className="text-xl font-bold">{project.title}</h3>
-                        <p className="text-gray-300">{project.description}</p>
-                        <ul className="list-disc pl-5 mt-auto">
-                          {project.tags.map((tag: string, index: number) => (
-                            <li
-                              key={index}
-                              className="text-gray-400 text-sm mb-2"
-                            >
-                              {tag}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                      <h3 className="text-xl font-bold mt-4 mb-4">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-300 mb-4">
+                        {project.description}
+                      </p>
+                      <ul className="list-disc pl-5 mt-auto">
+                        {project.tags.map((tag: string, index: number) => (
+                          <li
+                            key={index}
+                            className="text-gray-400 text-sm mb-2"
+                          >
+                            {tag}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   ))}
                 </div>
