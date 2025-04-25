@@ -6,35 +6,38 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "Digitalizace skladu",
-    description:
-      "Transformace konvenčního skladu s papírovou administrací do plně digitálního moderního skladu s automatizovaným procesem příjmu a výdeje.",
-    tags: ["2 hodiny denně méně administrativy", "80% menší chybovost"],
-    image: "/image.jpeg", // Replace with actual image path
+    title: "SERVISNÍ PROTOKOL",
+    description: `Digitalizace papírového servisního protokolu výrazně zjednodušila a zpřehlednila celý
+      proces. Po provedení servisní prohlídky se automaticky generuje digitální report včetně
+      fotodokumentace zjištěných poškození, který je okamžitě odeslán zákazníkovi. Zároveň
+      vzniká interní protokol s poznámkami mechanika a dalšími důležitými informacemi pro
+      navazující servisní kroky. Tím dochází k úspoře času, minimalizaci chyb a zvýšení
+      transparentnosti celého procesu.
+      `,
+    tags: ["140 min. ušetřeno každý den", "60% vyšší zákaznická spokojenost"],
+    image: "/usecase1.jpeg", // Replace with actual image path
   },
   {
     id: 2,
-    title: "Digitalizace skladu",
-    description:
-      "Transformace konvenčního skladu s papírovou administrací do plně digitálního moderního skladu s automatizovaným procesem příjmu a výdeje.",
-    tags: ["2 hodiny denně méně administrativy", "80% menší chybovost"],
-    image: "/image.jpeg",
+    title: "TIME TRACKING",
+    description: `Digitalizace docházkového systému nahradila papírové lístky a ruční přepisování do Excelu.
+      Zaměstnance systém rozpozná pomocí kamery na tabletu nebo geolokace do 300 metrů.
+      Sleduje čas strávený na úkolech a automaticky generuje podklady pro výplaty. Dovolené,
+      lékař či sick days lze spravovat přímo z mobilního telefonu.`,
+    tags: ["36 min. ušetřeno každý den", "90% menší chybovost"],
+    image: "/usecase2.jpeg",
   },
   {
     id: 3,
-    title: "Digitalizace skladu",
-    description:
-      "Transformace konvenčního skladu s papírovou administrací do plně digitálního moderního skladu s automatizovaným procesem příjmu a výdeje.",
-    tags: ["2 hodiny denně méně administrativy", "80% menší chybovost"],
-    image: "/image.jpeg",
-  },
-  {
-    id: 4,
-    title: "Digitalizace skladu",
-    description:
-      "Transformace konvenčního skladu s papírovou administrací do plně digitálního moderního skladu s automatizovaným procesem příjmu a výdeje.",
-    tags: ["2 hodiny denně méně administrativy", "80% menší chybovost"],
-    image: "/image.jpeg",
+    title: "AUTOMATIZOVANÝ VÝDEJNÍ BOX",
+    description: `
+      Zavedením výdejního boxu došlo k automatizaci výdeje nářadí, spojovacího materiálu a
+      OOPP. Zaměstnanci mají přístup 24/7 přes své přihlášení. Box sleduje stav zásob,
+      automaticky objednává u dodavatelů a umí přizpůsobit minimální množství podle vývoje
+      spotřeby. Výrazně se tím snížily prostoje i chybovost.
+      `,
+    tags: ["180 min. ušetřeno každý den", "98% menší chybovost"],
+    image: "/usecase3.jpeg",
   },
 ];
 
@@ -100,11 +103,14 @@ const ProjectSlider = () => {
               >
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {groupedProjects[current]?.map((project: any) => (
-                    <div key={project.id} className="p-6 relative">
+                    <div
+                      key={project.id}
+                      className="p-6 relative flex flex-col"
+                    >
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="rounded-lg mb-4 h-[230px] w-[100%]"
+                        className="rounded-lg mb-4 w-full h-[400px] md:h-[600px]"
                       />
                       <div className="absolute top-0 right-0 p-8 w-[90%] md:w-[70%] flex flex-wrap justify-end space-y-2">
                         {project.tags.map((tag: string, index: number) => (
@@ -117,9 +123,19 @@ const ProjectSlider = () => {
                         ))}
                       </div>
 
-                      <div className="space-y-4">
+                      <div className="space-y-4 mt-auto">
                         <h3 className="text-xl font-bold">{project.title}</h3>
                         <p className="text-gray-300">{project.description}</p>
+                        <ul className="list-disc pl-5 mt-auto">
+                          {project.tags.map((tag: string, index: number) => (
+                            <li
+                              key={index}
+                              className="text-gray-400 text-sm mb-2"
+                            >
+                              {tag}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   ))}
