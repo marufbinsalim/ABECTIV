@@ -47,7 +47,7 @@ const projects = [
 
       `,
     tags: ["120 min. ušetřeno každý den", "80% rychlejší proces platby"],
-    image: "/usecase3.jpeg",
+    image: "/usecase4.png",
   },
   {
     id: 5,
@@ -56,7 +56,7 @@ const projects = [
     Zákazník jednoduše nahraje odkaz na zboží, nabídku nebo fakturu – náš systém vše zpracuje a automaticky vytvoří objednávku, kterou odešle dodavateli. Celý proces je digitalizovaný, bez nutnosti shvalování. Nákup probíhá rychle, přesně a bez zbytečných chyb. Výrazně se zrychlilo odbavení požadavků a snížila administrativní zátěž nákupního oddělení.
       `,
     tags: ["90 min. ušetřeno každý den", "85% rychlejší proces nákupu"],
-    image: "/usecase3.jpeg",
+    image: "/usecase5.png",
   },
 ];
 
