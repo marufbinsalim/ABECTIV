@@ -39,6 +39,25 @@ const projects = [
     tags: ["180 min. ušetřeno každý den", "98% menší chybovost"],
     image: "/usecase3.jpeg",
   },
+  {
+    id: 4,
+    title: "AUTOMATICKÁ PLATBA FAKTURY",
+    description: `
+    Pro nákupní oddělení jsme zavedli plně automatizovaný systém zpracování a úhrady faktur. Stačí fakturu jednoduše nahrát – systém ji během několika minut ověří a provede platbu. Celý proces, který dříve zabíral dny, je nyní plně digitální, rychlý a spolehlivý. Výrazně se zkrátila doba zpracování, eliminovala chybovost a zefektivnilo schvalování nákupů.
+
+      `,
+    tags: ["120 min. ušetřeno každý den", "80% rychlejší proces platby"],
+    image: "/usecase3.jpeg",
+  },
+  {
+    id: 5,
+    title: "AUTOMATIZACE NÁKUPNÍHO PROCESU",
+    description: `
+    Zákazník jednoduše nahraje odkaz na zboží, nabídku nebo fakturu – náš systém vše zpracuje a automaticky vytvoří objednávku, kterou odešle dodavateli. Celý proces je digitalizovaný, bez nutnosti shvalování. Nákup probíhá rychle, přesně a bez zbytečných chyb. Výrazně se zrychlilo odbavení požadavků a snížila administrativní zátěž nákupního oddělení.
+      `,
+    tags: ["90 min. ušetřeno každý den", "85% rychlejší proces nákupu"],
+    image: "/usecase3.jpeg",
+  },
 ];
 
 const groupProjects = (projects: any[], groupSize: number) => {
@@ -110,7 +129,7 @@ const ProjectSlider = () => {
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="rounded-lg mb-4 w-full h-[400px] md:h-[600px]"
+                        className="rounded-lg mb-4 w-full h-[230px] object-cover"
                       />
                       <div className="absolute top-0 right-0 p-8 w-[90%] md:w-[70%] flex flex-wrap justify-end space-y-2">
                         {project.tags.map((tag: string, index: number) => (
