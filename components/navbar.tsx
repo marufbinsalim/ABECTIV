@@ -2,8 +2,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import { MenuIcon, XIcon } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { COLORS } from "./colors";
 
-function Navbar({ color }: { color: string }) {
+function Navbar({
+  color,
+  setEmailModalVisible,
+}: {
+  color: string;
+  setEmailModalVisible: (visible: boolean) => void;
+}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -43,16 +50,22 @@ function Navbar({ color }: { color: string }) {
         <Link href="/#onas">
           <p>O nás</p>
         </Link>
-        <Link href="/#konzultace">
-          <p className="bg-[#121212] px-4 py-2 rounded-full">
-            Konzultace zdarma
-          </p>
-        </Link>
-        <Link href="/#automatizace">
-          <p className="bg-[#A1FAFF] border-[#EBFFFE] border rounded-full px-4 py-2 text-black">
-            Chci automatizovat
-          </p>
-        </Link>
+        <p
+          className="bg-[#121212] px-4 py-2 rounded-full cursor-pointer"
+          onClick={() => {
+            if (color === COLORS.black) setEmailModalVisible(true);
+          }}
+        >
+          Konzultace zdarma
+        </p>
+        <p
+          className="bg-[#A1FAFF] border-[#EBFFFE] border rounded-full px-4 py-2 text-black cursor-pointer"
+          onClick={() => {
+            if (color === COLORS.black) setEmailModalVisible(true);
+          }}
+        >
+          Chci automatizovat
+        </p>
       </div>
 
       {/* Mobile Menu */}
@@ -79,22 +92,24 @@ function Navbar({ color }: { color: string }) {
               <Link href="/#onas">
                 <p onClick={toggleMobileMenu}>O nás</p>
               </Link>
-              <Link href="/#konzultace">
-                <p
-                  className="bg-[#121212] px-4 py-2 rounded-full mt-6"
-                  onClick={toggleMobileMenu}
-                >
-                  Konzultace zdarma
-                </p>
-              </Link>
-              <Link href="/#automatizace">
-                <p
-                  className="bg-[#A1FAFF] border-[#EBFFFE] border rounded-full px-4 py-2 text-black"
-                  onClick={toggleMobileMenu}
-                >
-                  Chci automatizovat
-                </p>
-              </Link>
+              <p
+                className="bg-[#121212] px-4 py-2 rounded-full mt-6"
+                onClick={() => {
+                  if (color === COLORS.black) setEmailModalVisible(true);
+                  toggleMobileMenu();
+                }}
+              >
+                Konzultace zdarma
+              </p>
+              <p
+                className="bg-[#A1FAFF] border-[#EBFFFE] border rounded-full px-4 py-2 text-black"
+                onClick={() => {
+                  if (color === COLORS.black) setEmailModalVisible(true);
+                  toggleMobileMenu();
+                }}
+              >
+                Chci automatizovat
+              </p>
             </div>
           </motion.div>
         )}

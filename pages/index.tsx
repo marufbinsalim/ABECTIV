@@ -14,15 +14,29 @@ import Link from "next/link";
 import textContents from "@/components/textContents";
 import Hero from "@/components/hero";
 import ProcessSection from "@/components/process";
+import EmailSend from "@/components/emailSend";
+import { useState } from "react";
 
 export default function Home() {
   const { color, index } = useAnimationColors(textContents);
+  const [emailModalVisible, setEmailModalVisible] = useState(false);
   return (
     <div
-      className={`flex flex-col h-dvh text-white ${color === COLORS.black ? "overflow-auto" : "overflow-hidden"}`}
+      className={`relative flex flex-col h-dvh text-white ${color === COLORS.black && !emailModalVisible ? "overflow-auto" : "overflow-hidden"}`}
     >
-      <Navbar color={Object.values(COLORS)[index]} />
-      <Hero index={index} color={color} />
+      <EmailSend
+        emailModalVisible={emailModalVisible && color === COLORS.black}
+        setEmailModalVisible={setEmailModalVisible}
+      />
+      <Navbar
+        color={Object.values(COLORS)[index]}
+        setEmailModalVisible={setEmailModalVisible}
+      />
+      <Hero
+        index={index}
+        color={color}
+        setEmailModalVisible={setEmailModalVisible}
+      />
       <ProductivitySection />
       <AutomationInterestSection />
       <ProjectSlider />
