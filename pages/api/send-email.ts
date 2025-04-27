@@ -8,8 +8,7 @@ type Data = {
 import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
 
 const mailersend = new MailerSend({
-  apiKey:
-    "mlsn.6ada987918e67d62d1158c330a0346a3b50cbc2c22fcf17db8d2806bf5427fd5",
+  apiKey: process.env.MAILER_API!,
 });
 
 export default async function handler(
@@ -30,7 +29,7 @@ export default async function handler(
   const sentFrom = new Sender(senderEmail, senderName);
   const recipients = [
     new Recipient("obchod@abectiv.com", "Ondrej"),
-    new Recipient("mdmarufbinsalim@gmail.com", "Maruf"),
+    // new Recipient("mdmarufbinsalim@gmail.com", "Maruf"),
   ];
   const emailParams = new EmailParams()
     .setFrom(sentFrom)
