@@ -3,34 +3,60 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, LucideArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 
+// "Díky digitalizovanému protokolu máme ihned přehled o stavu vozidel i práci mechaniků. Reporty se zákazníkům odesílají automaticky a my šetříme každý den spoustu času. Skvělý posun kupředu!"
+// Miroslav Houdek, manager servisu
+// Servis-Centrum CZ, s.r.o.
+
+// "Papírová docházka byla noční můra. Teď máme vše online, bez chyb a bez zdržení. Zaměstnanci si to pochvalují a my máme přesné podklady pro mzdy během chvilky."
+// Jaroslav Řehoř, ředitel společnosti
+// Servis-Centrum CZ, s.r.o.
+
+// "Výdejní box nám výrazně zefektivnil práci. Materiál je dostupný nonstop, sledují se zásoby i spotřeba. Prostoje zmizely a chyba ve výdeji je dnes skoro nemožná."
+// Miroslav Beránek, manager skladu
+// Servis-Centrum CZ, s.r.o.
+
+// "Platby dodavatelských faktur nám dříve trvaly celé dny/měsíce – teď je hotovo během pár minut. Systém všechno ověří, zaplatí a my máme jistotu, že je vše v pořádku. Ušetříme čas i starosti." Dodavatelé jsou spokojeni a nečekají na své peníze.
+// Vladimír Horváth, Purchasing manager
+// Hitachi Energy Czech Republic, s.r.o.
+// "Nahrát odkaz a mít během chvíle hotovou objednávku bez čekání na schválení? To je pro nás obrovská úspora času. Nákupy probíhají rychle a bez zbytečných průtahů."
+// Daniel Parai, buyer
+// Hitachi Energy Czech Republic, s.r.o.
+
 const testimonials = [
   {
     id: 1,
     companyLogo: "/logo.webp", // Replace with the correct path to the logo
-    feedback: `"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."`,
-    name: "Name Surname",
-    position: "Position, Company name",
+    feedback: `"Díky digitalizovanému protokolu máme ihned přehled o stavu vozidel i práci mechaniků. Reporty se zákazníkům odesílají automaticky a my šetříme každý den spoustu času. Skvělý posun kupředu!"`,
+    name: "Miroslav Houdek",
+    position: "Manager servisu, Servis-Centrum CZ, s.r.o.",
   },
   {
     id: 2,
     companyLogo: "/logo.webp", // Replace with the correct path to the logo
-    feedback: `"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."`,
-    name: "Name Surname",
-    position: "Position, Company name",
+    feedback: `"Papírová docházka byla noční můra. Teď máme vše online, bez chyb a bez zdržení. Zaměstnanci si to pochvalují a my máme přesné podklady pro mzdy během chvilky."`,
+    name: "Jaroslav Řehoř",
+    position: "Ředitel společnosti, Servis-Centrum CZ, s.r.o.",
   },
   {
     id: 3,
-    companyLogo: "/logo.webp", // Replace with another logo
-    feedback: `"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."`,
-    name: "Name Surname",
-    position: "Position, Company name",
+    companyLogo: "/logo.webp", // Replace with the correct path to the logo
+    feedback: `"Výdejní box nám výrazně zefektivnil práci. Materiál je dostupný nonstop, sledují se zásoby i spotřeba. Prostoje zmizely a chyba ve výdeji je dnes skoro nemožná."`,
+    name: "Miroslav Beránek",
+    position: "Manager skladu, Servis-Centrum CZ, s.r.o.",
   },
   {
     id: 4,
-    companyLogo: "/logo.webp", // Replace with another logo
-    feedback: `"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare."`,
-    name: "Name Surname",
-    position: "Position, Company name",
+    companyLogo: "/logo.webp", // Replace with the correct path to the logo
+    feedback: `"Platby dodavatelských faktur nám dříve trvaly celé dny/měsíce – teď je hotovo během pár minut. Systém všechno ověří, zaplatí a my máme jistotu, že je vše v pořádku. Ušetříme čas i starosti."`,
+    name: "Vladimír Horváth",
+    position: "Purchasing manager, Hitachi Energy Czech Republic, s.r.o.",
+  },
+  {
+    id: 5,
+    companyLogo: "/logo.webp", // Replace with the correct path to the logo
+    feedback: `"Nahrát odkaz a mít během chvíle hotovou objednávku bez čekání na schválení? To je pro nás obrovská úspora času. Nákupy probíhají rychle a bez zbytečných průtahů."`,
+    name: "Daniel Parai",
+    position: "Buyer, Hitachi Energy Czech Republic, s.r.o.",
   },
 ];
 
