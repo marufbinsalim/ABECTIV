@@ -46,7 +46,7 @@ function Hero({
                     onClick={() => {
                       if (color === COLORS.black) setEmailModalVisible(true);
                     }}
-                    className="px-6 py-3 bg-[#A1FAFF] text-[#002330] font-semibold rounded-full hover:opacity-80 transition "
+                    className="px-6 py-3 bg-[#A1FAFF] text-[#002330] font-semibold rounded-full hover:opacity-80 transition w-max m-auto md:m-0"
                   >
                     Chci automatizovat
                   </button>
@@ -54,7 +54,7 @@ function Hero({
                     href={"https://calendly.com/abectiv/konzultace"}
                     target="_blank"
                   >
-                    <button className="px-6 py-3 border border-[#CDFEFF] text-[#CDFEFF]  font-semibold rounded-full hover:bg-cyan-400 hover:text-black transition">
+                    <button className="w-max px-6 py-3 border border-[#CDFEFF] text-[#CDFEFF]  font-semibold rounded-full hover:bg-cyan-400 hover:text-black transition">
                       Konzultace zdarma
                     </button>
                   </Link>
