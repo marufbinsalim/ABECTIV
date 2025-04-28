@@ -50,14 +50,11 @@ function Navbar({
         <Link href="/#onas">
           <p>O nás</p>
         </Link>
-        <p
-          className="bg-[#121212] px-4 py-2 rounded-full cursor-pointer"
-          onClick={() => {
-            if (color === COLORS.black) setEmailModalVisible(true);
-          }}
-        >
-          Konzultace zdarma
-        </p>
+        <Link href={"https://calendly.com/abectiv/konzultace"} target="_blank">
+          <p className="bg-[#121212] px-4 py-2 rounded-full cursor-pointer">
+            Konzultace zdarma
+          </p>
+        </Link>
         <p
           className="bg-[#A1FAFF] border-[#EBFFFE] border rounded-full px-4 py-2 text-black cursor-pointer"
           onClick={() => {

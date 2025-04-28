@@ -47,7 +47,7 @@ const textContents = [
           %
         </p>
         <p className="text-[20px] sm:text-[16px] md:text-[40px] text-[#00C6DE] font-medium">
-          vyšši efektivita
+          vyšší efektivita
         </p>
       </div>
     ),

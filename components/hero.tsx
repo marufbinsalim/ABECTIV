@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import textContents from "@/components/textContents";
 import { COLORS } from "./colors";
+import Link from "next/link";
 
 function Hero({
   index,
@@ -49,14 +50,14 @@ function Hero({
                   >
                     Chci automatizovat
                   </button>
-                  <button
-                    onClick={() => {
-                      if (color === COLORS.black) setEmailModalVisible(true);
-                    }}
-                    className="px-6 py-3 border border-[#CDFEFF] text-[#CDFEFF]  font-semibold rounded-full hover:bg-cyan-400 hover:text-black transition"
+                  <Link
+                    href={"https://calendly.com/abectiv/konzultace"}
+                    target="_blank"
                   >
-                    Konzultace zdarma
-                  </button>
+                    <button className="px-6 py-3 border border-[#CDFEFF] text-[#CDFEFF]  font-semibold rounded-full hover:bg-cyan-400 hover:text-black transition">
+                      Konzultace zdarma
+                    </button>
+                  </Link>
                 </div>
               </div>
             )}

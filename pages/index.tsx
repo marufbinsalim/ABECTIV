@@ -42,7 +42,7 @@ export default function Home() {
       <ProjectSlider />
       <ProcessSection />
       <BusinessAnalyticsSection />
-      <AutomationSection />
+      <AutomationSection setEmailModalVisible={setEmailModalVisible} />
       <TestimonialSlider />
       <AboutSection />
       <FooterSection />
