@@ -24,7 +24,7 @@ function Hero({
           initial={{ opacity: 0, x: 500 * (index % 2 === 0 ? -1 : 1) }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 500 * (index % 2 === 0 ? -1 : 1) }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.1 }}
         >
           <div
             className={`flex flex-col items-center justify-center w-full h-[93vh] relative`}
