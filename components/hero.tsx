@@ -21,9 +21,9 @@ function Hero({
         <motion.div
           key={textContents[index].id}
           className={`flex flex-col justify-center ${textContents[index].color} overflow-hidden`}
-          initial={{ opacity: 0, x: 500 * (index % 2 === 0 ? -1 : 1) }}
+          initial={{ opacity: 0, x: 500 * (index % 2 !== 0 ? -1 : 1) }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: 500 * (index % 2 === 0 ? -1 : 1) }}
+          exit={{ opacity: 0, x: 500 * (index % 2 !== 0 ? -1 : 1) }}
           transition={{ duration: 0.1 }}
         >
           <div
