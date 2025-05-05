@@ -1,4 +1,3 @@
-import { LucideMail, LucideMap, LucidePhone, LucidePin } from "lucide-react";
 import { useState } from "react";
 
 const MobileProcessComponent = () => {

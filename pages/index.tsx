@@ -9,7 +9,6 @@ import ProductivitySection from "@/components/ProductivitySection";
 import ProjectSlider from "@/components/project";
 import TestimonialSlider from "@/components/testimonials";
 import { useAnimationColors } from "@/hooks/useAnimationColors";
-import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import textContents from "@/components/textContents";
 import Hero from "@/components/hero";
