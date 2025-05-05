@@ -17,25 +17,17 @@ import EmailSend from "@/components/emailSend";
 import { useState } from "react";
 
 export default function Home() {
-  const { color, index } = useAnimationColors(textContents);
   const [emailModalVisible, setEmailModalVisible] = useState(false);
   return (
     <div
-      className={`relative flex flex-col h-dvh text-white ${color === COLORS.black && !emailModalVisible ? "overflow-auto" : "overflow-hidden"}`}
+      className={`relative flex flex-col h-dvh text-white ${true ? "overflow-auto" : "overflow-hidden"}`}
     >
       <EmailSend
-        emailModalVisible={emailModalVisible && color === COLORS.black}
+        emailModalVisible={emailModalVisible}
         setEmailModalVisible={setEmailModalVisible}
       />
-      <Navbar
-        color={Object.values(COLORS)[index]}
-        setEmailModalVisible={setEmailModalVisible}
-      />
-      <Hero
-        index={index}
-        color={color}
-        setEmailModalVisible={setEmailModalVisible}
-      />
+      <Navbar setEmailModalVisible={setEmailModalVisible} />
+      <Hero setEmailModalVisible={setEmailModalVisible} />
       <ProductivitySection />
       <AutomationInterestSection />
       <ProjectSlider />

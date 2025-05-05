@@ -73,7 +73,11 @@ const MobileProcessComponent = () => {
             className={`transition-all duration-700 ${currentStep === step.id ? "opacity-100 h-auto" : "opacity-0 h-0"}`}
           >
             {currentStep === step.id &&
-              step?.description.map((desc) => <p className="mt-8">{desc} </p>)}
+              step?.description.map((desc, index) => (
+                <p key={index} className="mt-8">
+                  {desc}{" "}
+                </p>
+              ))}
           </div>
         </div>
       ))}

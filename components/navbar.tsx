@@ -5,10 +5,8 @@ import { useEffect, useState } from "react";
 import { COLORS } from "./colors";
 
 function Navbar({
-  color,
   setEmailModalVisible,
 }: {
-  color: string;
   setEmailModalVisible: (visible: boolean) => void;
 }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,7 +19,7 @@ function Navbar({
     <div
       className={`sticky z-10 top-0 left-0 w-full h-16 min-h-max text-white flex items-center justify-between py-3 px-6 transition-all
         duration-1000 ease-in-out
-        ${color}`}
+        bg-black`}
     >
       <div onClick={() => window.location.replace("/")}>
         <img src="/logo.webp" alt="Logo" className="h-8" />
@@ -58,7 +56,7 @@ function Navbar({
         <p
           className="bg-[#A1FAFF] border-[#EBFFFE] border rounded-full px-4 py-2 text-black cursor-pointer"
           onClick={() => {
-            if (color === COLORS.black) setEmailModalVisible(true);
+            setEmailModalVisible(true);
           }}
         >
           Chci automatizovat
@@ -75,7 +73,7 @@ function Navbar({
             className="absolute top-[54px] left-0 w-full text-white  md:hidden min-h-[93dvh] bg-[#00000093]"
           >
             <div
-              className={`flex flex-col items-center space-y-4 py-8 transition-all duration-1000 ease-in-out ${color} border-b border-b-[#dbdbdb40]`}
+              className={`bg-black flex flex-col items-center space-y-4 py-8 transition-all duration-1000 ease-in-out  border-b border-b-[#dbdbdb40]`}
             >
               <Link href="/#digitalizace">
                 <p onClick={toggleMobileMenu}>Digitalizace</p>
@@ -100,7 +98,7 @@ function Navbar({
               <p
                 className="bg-[#A1FAFF] border-[#EBFFFE] border rounded-full px-4 py-2 text-black"
                 onClick={() => {
-                  if (color === COLORS.black) setEmailModalVisible(true);
+                  setEmailModalVisible(true);
                   toggleMobileMenu();
                 }}
               >
