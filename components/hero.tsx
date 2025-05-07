@@ -52,9 +52,9 @@ function Hero({
   return (
     <div
       id="hero"
-      className="flex relative flex-col justify-center min-h-[94dvh] overflow-x-hidden bg-black pb-[5vh] overflow-hidden"
+      className="flex relative flex-col justify-center min-h-[93dvh] overflow-x-hidden bg-black pb-[5vh] overflow-hidden"
     >
-      <div className="flex flex-col items-center justify-center w-full h-[93vh] relative">
+      <div className="flex flex-col items-center justify-center w-full h-[93dvh] relative overflow-hidden">
         {/* Main content - appears in steps 2-4 */}
         <AnimatePresence>
           {animationStep >= 2 && (
