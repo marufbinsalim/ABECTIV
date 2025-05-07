@@ -111,7 +111,7 @@ function Hero({
 
         {/* Statistics card */}
         <motion.div
-          className={`flex justify-between mx-auto p-8 ${
+          className={`flex justify-between mx-auto p-8 md:p-0 ${
             animationStep === 0 ? "absolute inset-0 m-auto" : "mb-[10vh]"
           } gap-[10vw] w-[100vw] md:w-[60vw]`}
           initial={{
