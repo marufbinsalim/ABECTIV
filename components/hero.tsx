@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const titleText = "Neztrácejte čas!";
-const subtitleText = "Objevte sílu automatizace a zvyšujte produktivitu.";
 
 function Hero({
   setEmailModalVisible,
@@ -12,8 +11,8 @@ function Hero({
 }) {
   const [animationStep, setAnimationStep] = useState(0);
   const [displayValues, setDisplayValues] = useState(["00", "00", "00"]);
-  const [displayTitle, setDisplayTitle] = useState("");
-  const [displaySubtitle, setDisplaySubtitle] = useState("");
+  // const [displayTitle, setDisplayTitle] = useState(titleText);
+  // const [displaySubtitle, setDisplaySubtitle] = useState(subtitleText);
 
   // Shuffling effect for numbers
   useEffect(() => {
@@ -50,31 +49,6 @@ function Hero({
     }
   }, [animationStep]);
 
-  // Animate title letter by letter
-  useEffect(() => {
-    if (animationStep === 2) {
-      let i = 0;
-      const typingInterval = setInterval(() => {
-        setDisplayTitle(titleText.slice(0, i));
-        i++;
-        if (i > titleText.length) {
-          clearInterval(typingInterval);
-          setAnimationStep(3); // Move to next step
-        }
-      }, 100);
-      return () => clearInterval(typingInterval);
-    }
-  }, [animationStep]);
-
-  // Show subtitle
-  useEffect(() => {
-    if (animationStep === 3) {
-      setDisplaySubtitle(subtitleText);
-      const timer = setTimeout(() => setAnimationStep(4), 1000);
-      return () => clearTimeout(timer);
-    }
-  }, [animationStep]);
-
   return (
     <div
       id="hero"
@@ -94,26 +68,26 @@ function Hero({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >
-                {displayTitle}
+                {titleText}
               </motion.h1>
 
-              {animationStep >= 3 && (
+              {animationStep >= 2 && (
                 <motion.h2
                   className="text-4xl md:text-6xl font-bold mb-14"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
                 >
                   <span className="text-[#00C6DE]">Automatizace!</span>
                 </motion.h2>
               )}
 
-              {animationStep >= 4 && (
+              {animationStep >= 2 && (
                 <motion.div
                   className="flex gap-4 flex-col md:flex-row mt-8 md:mt-0"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
                 >
                   <button
                     onClick={() => setEmailModalVisible(true)}
@@ -137,17 +111,14 @@ function Hero({
 
         {/* Statistics card */}
         <motion.div
-          className={`flex justify-between mx-auto ${animationStep === 0 ? "absolute inset-0 m-auto" : "mb-[10vh]"} gap-[10vw] w-[60vw]`}
+          className={`flex justify-between mx-auto p-8 ${
+            animationStep === 0 ? "absolute inset-0 m-auto" : "mb-[10vh]"
+          } gap-[10vw] w-[100vw] md:w-[60vw]`}
           initial={{
             y: "40%",
           }}
           animate={{
             bottom: "0",
-            // position: animationStep === 0 ? "absolute" : "relative",
-            // top: animationStep === 0 ? "50%" : "auto",
-            // left: animationStep === 0 ? "0%" : "auto",
-            // transform: animationStep === 0 ? "translate(-50%, -50%)" : "none",
-            // marginBottom: animationStep === 0 ? 0 : "10vh",
           }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
@@ -155,7 +126,7 @@ function Hero({
             <div key={index} className="flex flex-col gap-4">
               <motion.h3
                 key={`value-${value}-${index}`}
-                className="text-8xl font-bold pr-[50px] border-r-[1px]"
+                className="text-4xl md:text-8xl font-bold md:pr-[50px] border-r-[1px]"
               >
                 {value}
               </motion.h3>
