@@ -1,3 +1,5 @@
+import { ChartArea, ChartBar, Rocket, ShieldCheck, Timer } from "lucide-react";
+
 const ProductivitySection = () => {
   return (
     <div
@@ -29,39 +31,47 @@ const ProductivitySection = () => {
       {/* Benefits */}
       <div className="flex justify-between gap-8 text-center mt-4 md:mt-auto flex-wrap h-max w-[90%] md:w-full m-auto">
         <div className="text-lg md:text-2xl font-medium flex flex-col items-center">
-          <img
+          {/* <img
             src="/4.gif"
             alt="Time Saved"
-            className="h-16 w-16 md:h-24 md:w-24"
-          />
+            className="h-16 w-16 md:h-24 md:w-24 mb-1 md:mb-2"
+          /> */}
+          <Timer className="h-16 w-16 md:h-24 md:w-24 mb-1 md:mb-2" />
           <p>Více času</p>
+          {/* english : More time */}
         </div>
 
         <div className="text-lg md:text-2xl font-medium flex flex-col items-center">
-          <img
+          {/* <img
             src="/3.gif"
             alt="Productivity"
-            className="h-16 w-16 md:h-24 md:w-24"
-          />
+            className="h-16 w-16 md:h-24 md:w-24 mb-1 md:mb-2"
+          /> */}
+          <ChartArea className="h-16 w-16 md:h-24 md:w-24 mb-1 md:mb-2" />
           <p>Vyšší produktivita</p>
+          {/* english : Higher productivity */}
         </div>
 
         <div className="text-lg md:text-2xl font-medium flex flex-col items-center">
-          <img
+          {/* <img
             src="/2.gif"
             alt="Errors"
-            className="h-16 w-16 md:h-24 md:w-24"
-          />
+            className="h-16 w-16 md:h-24 md:w-24 mb-1 md:mb-2"
+          /> */}
+          <Rocket className="h-16 w-16 md:h-24 md:w-24 mb-1 md:mb-2" />
           <p>Méně chyb</p>
+          {/* english : Less errors */}
         </div>
 
         <div className="text-lg md:text-2xl font-medium flex flex-col items-center">
-          <img
+          {/* <img
             src="/1.gif"
             alt="Overview"
-            className="h-16 w-16 md:h-24 md:w-24"
-          />
+            className="h-16 w-16 md:h-24 md:w-24 mb-1 md:mb-2"
+          /> */}
+          <ShieldCheck className="h-16 w-16 md:h-24 md:w-24 mb-1 md:mb-2" />
           <p>Lepší přehled</p>
+          {/* english : Better overview */}
         </div>
       </div>
     </div>

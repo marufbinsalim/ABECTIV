@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const AutomationInterestSection = () => {
   return (
     <div className="flex justify-between items-center min-h-[50vh] bg-black text-white px-6 md:px-24 lg:px-24 py-12">
@@ -15,10 +17,15 @@ const AutomationInterestSection = () => {
 
         {/* Right Button */}
         <div className="md:ml-auto my-auto">
-          <button className="flex items-center bg-[#A1FAFF] text-[#053747] font-semibold px-6 py-3 rounded-full hover:bg-cyan-400 transition">
-            Zjistit teď
-            <span className="ml-2">&rarr;</span>
-          </button>
+          <Link
+            href={"https://calendly.com/abectiv/konzultace"}
+            target="_blank"
+          >
+            <button className="flex items-center bg-[#A1FAFF] text-[#053747] font-semibold px-6 py-3 rounded-full hover:bg-cyan-400 transition">
+              Zjistit teď
+              <span className="ml-2">&rarr;</span>
+            </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -54,71 +54,58 @@ function Hero({
       id="hero"
       className="flex relative flex-col justify-center min-h-[93dvh] overflow-x-hidden bg-black pb-[5vh] overflow-hidden"
     >
-      <div className="flex flex-col items-center justify-center w-full h-[93dvh] relative overflow-hidden">
+      <div className="flex flex-col items-center w-full h-[93dvh]  overflow-hidden relative">
         {/* Main content - appears in steps 2-4 */}
         <AnimatePresence>
-          {animationStep >= 2 && (
+          {animationStep >= 3 && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="flex flex-col h-[100%] text-white text-center md:text-left w-full px-6 lg:px-[20vw] justify-center"
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+              className="flex flex-col h-[60%] text-white text-center md:text-left w-full px-6 lg:px-[20vw] justify-center"
             >
-              <motion.h1
-                className="text-4xl md:text-6xl font-bold mb-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-              >
+              <motion.h1 className="text-4xl md:text-6xl font-bold mb-4">
                 {titleText}
               </motion.h1>
 
-              {animationStep >= 2 && (
-                <motion.h2
-                  className="text-4xl md:text-6xl font-bold mb-14"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8, ease: "easeInOut" }}
-                >
-                  <span className="text-[#00C6DE]">Automatizace!</span>
-                </motion.h2>
-              )}
+              <motion.h2 className="text-4xl md:text-6xl font-bold mb-14">
+                <span className="text-[#00C6DE]">Automatizace!</span>
+              </motion.h2>
 
-              {animationStep >= 2 && (
-                <motion.div
-                  className="flex gap-4 flex-col md:flex-row mt-8 md:mt-0"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8, ease: "easeInOut" }}
+              <motion.div className="flex gap-4 flex-col md:flex-row mt-8 md:mt-0">
+                <button
+                  onClick={() => setEmailModalVisible(true)}
+                  className="px-6 py-3 bg-[#A1FAFF] text-[#002330] font-semibold rounded-full hover:opacity-80 transition w-max m-auto md:m-0"
                 >
-                  <button
-                    onClick={() => setEmailModalVisible(true)}
-                    className="px-6 py-3 bg-[#A1FAFF] text-[#002330] font-semibold rounded-full hover:opacity-80 transition w-max m-auto md:m-0"
-                  >
-                    Chci automatizovat
+                  Chci automatizovat
+                </button>
+                <Link
+                  href={"https://calendly.com/abectiv/konzultace"}
+                  target="_blank"
+                >
+                  <button className="w-max px-6 py-3 border border-[#CDFEFF] text-[#CDFEFF] font-semibold rounded-full hover:bg-cyan-400 hover:text-black transition">
+                    Konzultace zdarma
                   </button>
-                  <Link
-                    href={"https://calendly.com/abectiv/konzultace"}
-                    target="_blank"
-                  >
-                    <button className="w-max px-6 py-3 border border-[#CDFEFF] text-[#CDFEFF] font-semibold rounded-full hover:bg-cyan-400 hover:text-black transition">
-                      Konzultace zdarma
-                    </button>
-                  </Link>
-                </motion.div>
-              )}
+                </Link>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
 
         {/* Statistics card */}
         <motion.div
-          className={`flex justify-between mx-auto p-8 md:p-0 ${
-            animationStep === 0 ? "absolute inset-0 m-auto" : "mb-[10vh]"
-          } gap-[10vw] w-[100vw] md:w-[60vw]`}
+          className={`absolute flex justify-between mx-auto p-8 md:p-0 m-auto bottom-[50%] gap-[10vw] w-[100vw] md:w-[60vw]`}
           initial={{
-            y: "40%",
+            bottom: "50%",
           }}
           animate={{
-            bottom: "0",
+            bottom: animationStep >= 2 ? "0%" : "50%",
+          }}
+          // print the values
+          onAnimationComplete={() => {
+            if (animationStep === 2) {
+              setAnimationStep(3);
+            }
           }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >

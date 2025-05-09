@@ -14,14 +14,15 @@ const BusinessAnalyticsSection = () => {
             Odhalte skrytý potenciál vašich dat
           </h1>
           <p className="text-lg md:text-2xl leading-relaxed">
-            Pokud už máte digitalizované procesy disponujete{" "}
-            <span className="italic">"neobjeveným pokladem"</span> DATY ty se
-            stávají v dnešním dynamickém prostředí klíčem k úspěchu. Business
-            analytika vám umožňuje{" "}
+            Pokud už máte digitalizované procesy, máte k dispozici{" "}
+            <span className="italic">cenný zdroj – data</span>. V dnešním
+            dynamickém prostředí jsou právě data{" "}
+            <span className="italic">klíčem k úspěchu</span>. Business analytika
+            vám umožní{" "}
             <span className="text-[#00C6DE] font-semibold">
-              proměnit nestrukturovaná data v cenné informace
+              proměnit nestrukturovaná data v užitečné informace
             </span>
-            , které povedou k lepším obchodním rozhodnutím.
+            , které vedou k lepším obchodním rozhodnutím.
           </p>
         </div>
 
