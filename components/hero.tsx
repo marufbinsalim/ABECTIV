@@ -99,7 +99,7 @@ function Hero({
             bottom: "50%",
           }}
           animate={{
-            bottom: animationStep >= 2 ? "0%" : "50%",
+            bottom: animationStep >= 2 ? "10%" : "50%",
           }}
           // print the values
           onAnimationComplete={() => {
